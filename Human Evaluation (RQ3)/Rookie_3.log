@@ -1,0 +1,55 @@
+{
+  "target": "http://10.211.55.23:8069",
+  "database": "odoo_db17",
+  "timestamp": "2025-09-06T16:11:11.807940",
+  "users": [
+    {
+      "id": 65,
+      "login": "moustapha@mad.local",
+      "email": "moustapha@mad.local",
+      "name": "Internal User Limited"
+    },
+    {
+      "id": 70,
+      "login": "mai@mad.lu",
+      "email": "mai@mad.lu",
+      "name": "Maimouna"
+    },
+    {
+      "id": 66,
+      "login": "customer@test.local",
+      "email": "customer@test.local",
+      "name": "Portal Customer"
+    },
+    {
+      "id": 64,
+      "login": "portal@test.local",
+      "email": "portal@test.local",
+      "name": "Portal User Vulnerable"
+    },
+    {
+      "id": 63,
+      "login": "portal.test@local.com",
+      "email": "portal.test@local.com",
+      "name": "Test"
+    },
+    {
+      "id": 3,
+      "login": "admin@mad.lu",
+      "email": "admin@mad.lu",
+      "name": "Administrator"
+    },
+    {
+      "id": 7,
+      "login": "mark.brown23@example.com",
+      "email": "mark.brown23@example.com",
+      "name": "Marc Demo"
+    },
+    {
+      "id": 8,
+      "login": "tamah@mad.local",
+      "email": "tamah@mad.local",
+      "name": "Tamah"
+    }
+  ]
+}
