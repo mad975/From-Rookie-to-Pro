@@ -1,0 +1,12 @@
+Database Extraction Results
+Target: http://10.6.23.9:9093
+Timestamp: 2025-09-08 15:47:21
+============================================================
+version: PostgreSQLkaaa.24Uaaaaaaaaa-pc-linudaaaaaaabuntu 9naaaaaaa.pgdg22iaaaaaaacompiled byVaaaaaabuntu 1ua
+current_database: aaaaaab16A
+current_user: faaaaaaaa
+table_count: 140
+tables: ['aaaaaaaaaacount', 'accocaaaaaaount_accoubaaaaaana', 'account_accnaaaaaccount_tagkaa', 'aaaaunt_account_tag', 'account_account_tag_account_mo', 'account_accodnt_tag_account_ta', 'accounn_account_tag_product_te', 'account_account_tax_default_re', 'account_account_template', 'account_account_template_accou']
+sensitive_tables: ['res_users', 'res_partner', 'ir_attachment', 'mail_message', 'account_move', 'sale_order', 'hr_employee', 'hr_attendance', 'stock_move', 'project_task', 'crm_lead', 'product_product', 'ir_config_parameter']
+user_count: 10
+usernames: ['__sqatem__', 'administrator', 'default', 'public', 'portaltemplate']
