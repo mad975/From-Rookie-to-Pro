@@ -29,16 +29,60 @@ The repository is structured linearly to follow the Research Questions (RQs) pre
 
 ---
 
-## 2. Requirements & Setup
+## 2. Generalizability Evaluation (ERPNext)
 
-To reproduce the functional exploitation results (RQ2), you must deploy the local testbed.
+To demonstrate that RSA extends beyond Odoo, we conducted a complementary evaluation on ERPNext — another widely deployed open-source ERP platform built on the Frappe framework.
+
+### Scope
+* **Target:** ERPNext v15
+* **Model:** Claude Opus 4.6
+* **CVEs tested:** CVE-2025-66439, CVE-2025-66440, CVE-2025-67289 (disclosed December 2025)
+* **Result:** All three CVEs successfully exploited using the identical RSA template
+
+### Contents
+Each CVE subfolder under `Supplementary_Materials/ERPNext_Generalizability/` contains the generated exploit script and its raw execution output.
+
+---
+
+## 3. Requirements & Setup
 
 ### System Requirements
-* **Docker & Docker-Compose**
 * **Python 3.10+**
+* **PostgreSQL 12+**
+* **Git**
+* Linux or macOS environment (tested on Ubuntu 22.04)
 
-### Deployment Steps
-1. **Initialize the Odoo Lab:**
-   ```bash
-   cd Target_Environment
-   docker-compose up -d
+### Reproducing the Experiments
+
+Complete metadata for all tested CVEs — including affected versions, vulnerable commit hashes, and patch commit hashes — is available in:
+
+📋 **[Supplementary_Materials/CVE_Metadata.xlsx](https://docs.google.com/spreadsheets/d/1kRcvCiCcmpxgGF8w8i_9UBk5mkvZyEwr/edit?usp=sharing&ouid=109334181020275797926&rtpof=true&sd=true)** (also available as [CSV](Supplementary_Materials/CVE_Metadata.csv))
+
+#### General Deployment Procedure
+
+For each CVE, using the metadata file:
+
+1. **Identify the vulnerable commit hash** from `CVE_Metadata.xlsx`.
+
+2. **Clone and checkout the vulnerable version:**
+```bash
+   git clone https://github.com/odoo/odoo.git   
+   cd <repository>
+   git checkout <vulnerable_commit_hash>
+```
+
+3. **Install dependencies** following the official installation guide for the target version.
+
+4. **Initialize the database** and start the instance.
+
+5. **Execute the LLM-generated exploit** from the corresponding `Functional_Exploitation (RQ2)/` folder.
+
+### Reproducibility Note
+
+Due to the diversity of affected Odoo and ERPNext versions spanning multiple years (2017-2025), fully dockerized environments for all configurations are not provided. The artifacts include the LLM-generated exploit scripts, their execution outputs, and the `CVE_Metadata.xlsx` file with all information required to reproduce each experimental setup manually.
+
+---
+
+* **`Supplementary_Materials/`**: Additional materials supporting the paper.
+    * **`Appendix.pdf`**: Extended appendix with formal RSA definition, parameter variations, and detailed CVE descriptions.
+    * **`ERPNext_Generalizability/`**: Generated scripts and execution logs demonstrating RSA's generalizability beyond Odoo, tested on three recent ERPNext CVEs using Claude Opus 4.6.
