@@ -88,5 +88,5 @@ Due to the diversity of affected Odoo and ERPNext versions spanning multiple yea
 ---
 
 * [**`Supplementary_Materials/`**](https://github.com/mad975/From-Rookie-to-Attacker/tree/main/Supplementary%20Materials): Additional materials supporting the paper.
-    [* **`Appendix.pdf`**](https://github.com/mad975/From-Rookie-to-Attacker/blob/main/Supplementary%20Materials/Appendix.pdf): Extended appendix with formal RSA definition, parameter variations, and detailed CVE descriptions.
+    * [**`Appendix.pdf`**](https://github.com/mad975/From-Rookie-to-Attacker/blob/main/Supplementary%20Materials/Appendix.pdf): Extended appendix with formal RSA definition, parameter variations, and detailed CVE descriptions.
     * [**`ERPNext_Generalizability/`**](https://github.com/mad975/From-Rookie-to-Attacker/tree/main/Supplementary%20Materials/ERPNext_Generalizability): Generated scripts and execution logs demonstrating RSA's generalizability beyond Odoo, tested on three recent ERPNext CVEs using Claude Opus 4.6.
